@@ -2,19 +2,39 @@ import React, { useState, useCallback, useEffect } from 'react'
 import Cropper from 'react-easy-crop'
 
 import { getCroppedImg } from './canvasUtils'
-import { Container, CropContiner, ZoomSlider, Slider, ButtonUpload } from './styled'
+import {
+    Container,
+    CropContiner,
+    ZoomSlider,
+    Slider,
+    ButtonUpload,
+    ButtonCancel,
+    ButtonsContent
+} from './styled'
 
-const CropImage = ({ image, handlerStep }) => {
+const CropImage = ({ image, handlerCancel, setCroppedImage }) => {
     const [crop, setCrop] = useState({ x: 0, y: 0 })
     const [zoom, setZoom] = useState(1)
     const [file, setFile] = useState('')
     const [croppedAreaPixels, setCroppedAreaPixels] = useState(null)
-    const [croppedImage, setCroppedImage] = useState(null)
+
 
     const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
         setCroppedAreaPixels(croppedAreaPixels)
         console.log(croppedArea, croppedAreaPixels)
     }, [])
+
+    const handleCroppImage = useCallback(async () => {
+        try {
+            const croppedImage = await getCroppedImg(
+                file,
+                croppedAreaPixels
+            )
+            setCroppedImage(croppedImage)
+        } catch (e) {
+            console.error(e)
+        }
+    }, [file, croppedAreaPixels, setCroppedImage])
 
 
 
@@ -28,6 +48,7 @@ const CropImage = ({ image, handlerStep }) => {
         }
         convertFileToBase64()
     }, [image])
+
 
     return (
         <Container>
@@ -43,7 +64,7 @@ const CropImage = ({ image, handlerStep }) => {
                 />
             </CropContiner>
             <ZoomSlider>
-                <h2>Zoom</h2>
+                <h3>Zoom</h3>
                 <Slider
                     value={zoom}
                     min={1}
@@ -54,13 +75,22 @@ const CropImage = ({ image, handlerStep }) => {
 
                 />
             </ZoomSlider>
-            <ButtonUpload
-              onClick={() => handlerStep(1)}
-              variant="contained"
-              color="primary"
-            >
-              Upload
-            </ButtonUpload>
+            <ButtonsContent>
+                <ButtonCancel
+                    onClick={handlerCancel}
+                    variant="contained"
+                    color="primary"
+                >
+                    Cancel
+                </ButtonCancel>
+                <ButtonUpload
+                    onClick={handleCroppImage}
+                    variant="contained"
+                    color="primary"
+                >
+                    Done
+                </ButtonUpload>
+            </ButtonsContent>
         </Container>
     )
 }

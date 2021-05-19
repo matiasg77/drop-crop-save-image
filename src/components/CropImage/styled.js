@@ -28,6 +28,20 @@ export const Slider = styled(SliderS)`
     }
 `
 
-export const ButtonUpload = styled(ButtonS)`
+export const ButtonsContent = styled.div`
+    
+`
 
+export const ButtonUpload = styled(ButtonS)`
+    && {
+        margin-left: 1.5em;
+        width: 100px;
+    }
+`
+export const ButtonCancel = styled(ButtonS)`
+    && {
+        background: gray;
+        margin-right: 1.5em;
+        width: 100px;
+    }
 `
