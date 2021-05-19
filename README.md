@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Demo
 
+[![](image.gif)](https://github.com/matiasg77/drop-crop-save-image/DropCropUploadImage.gif)
+
 ## Available Scripts
 
 In the project directory, you can run:
