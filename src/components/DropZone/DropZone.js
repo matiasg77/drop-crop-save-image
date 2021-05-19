@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 import { DropContent, Drop, CancelButton } from './styled'
 
@@ -23,6 +24,7 @@ const Dropzone = ({ setImg, handlerStep, handlerCancel }) => {
         <DropContent>
             <Drop {...getRootProps({isDragActive, isDragAccept, isDragReject})}>
                 <input {...getInputProps()} />
+                <CloudUploadIcon style={{ fontSize: 80 }}/>
                 {
                     isDragActive ?
                         <p>Drop the files here ...</p> :
