@@ -8,6 +8,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [![](DropCropUploadImage.gif)](https://github.com/matiasg77/drop-crop-save-image/DropCropUploadImage.gif)
 
+## Want to Contribute?
+
+- Created something awesome, made this code better, added some functionality, or whatever (this is the hardest part).
+- [Fork it](http://help.github.com/forking/).
+- Create new branch to contribute your changes.
+- Commit all your changes to your branch.
+- Submit a [pull request](http://help.github.com/pull-requests/).
+
 ## Available Scripts
 
 In the project directory, you can run:
