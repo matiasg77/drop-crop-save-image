@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# ReactJS - Drop Crop Upload Image
+
+Simple React Hook code to Drag, Drop, Crop and Upload images.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Demo
 
 ## Available Scripts
 
