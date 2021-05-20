@@ -8,6 +8,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [![](DropCropUploadImage.gif)](https://github.com/matiasg77/drop-crop-save-image/DropCropUploadImage.gif)
 
+
+[Live Demo](https://main.d3jn13wbh2xakg.amplifyapp.com/)
+
+
 ## Want to Contribute?
 
 - Created something awesome, made this code better, added some functionality, or whatever (this is the hardest part).
